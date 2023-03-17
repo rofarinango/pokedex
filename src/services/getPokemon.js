@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function getPokemon({keyword = 'charizard'} = {}){
     const apiURL = `https://pokeapi.co/api/v2/pokemon/${keyword}`;
 

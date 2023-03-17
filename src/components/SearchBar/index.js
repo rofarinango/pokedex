@@ -31,9 +31,7 @@ export function SearchBar({keyword}){
                         />
                 </form>
                 <i className="fas fa-search"></i>
-
             </div>
-            <Pokemon keyword={pokemonToSearch}/>
         </>
     )
 }

@@ -1,3 +1,4 @@
+import { List, ListItemButton, ListItemText } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { getListOfPokemons } from '../../services/getListOfPokemons'
 
@@ -9,29 +10,24 @@ export function ListOfPokemon(){
         .then(pokemons => {
             setPokemons(pokemons);
         });
-    });
+    }, [setPokemons]);
     return (
         <>
-            {
-                
-            }
-            <div 
-                className='list-container'
-                style={{height: "400px"}}
+        <div style={{height: '800px', overflow: 'auto'}}>
+            <List component="nav"
+                className='carousel'
             >
-                <div
-                    className='list-items'
-                    style={{height: "800px"}}
-                >
-                    {
-                        pokemons.map(singlePokemon =>
-                            <div
-                                key={singlePokemon.name}
-                            >{singlePokemon.name}</div>
-                            )
-                    }
-                </div>
-            </div>
+                {
+                    pokemons.map((singlePokemon)=>(
+                        <ListItemButton 
+                            className='carousel__item'
+                            key={singlePokemon.name}>
+                            <ListItemText primary={singlePokemon.name}/>
+                        </ListItemButton>
+                    ))
+                }
+            </List>
+        </div>
         </>
     )
 }

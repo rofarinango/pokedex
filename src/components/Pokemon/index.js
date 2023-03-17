@@ -15,8 +15,10 @@ export function Pokemon({keyword}){
 
     return(
         <>
-            <h3>{pokemon.name}</h3>
-            <img src={pokemon.imgURL}></img>
+            <div>
+                <h3>{pokemon.name}</h3>
+                <img src={pokemon.imgURL}></img>
+            </div>
         </>
     )
 }
